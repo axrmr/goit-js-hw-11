@@ -1,0 +1,38 @@
+.loader {
+  position: fixed;
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 45px;
+  height: 45px;
+  margin: 0 auto;
+  border: 2px solid rgba($color: blue, $alpha: 0.6);
+  border-radius: 50%;
+
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  animation: rotate 11s linear infinite;
+
+  transition: all 0.15s ease;
+
+  &.visible {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+.spinner {
+  width: 27px;
+  height: 27px;
+  background-color: transparent;
+  border: 3px solid transparent;
+  border-top: 3px solid rgb(112, 6, 173);
+  border-bottom: 3px solid blue;
+  border-radius: 50%;
+  animation: rotate 1s linear infinite;
+  transition: opacity 0.1s ease;
+}
