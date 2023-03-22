@@ -1,5 +1,3 @@
-import notify from './notify';
-
 export default function handleExceptions(error) {
   if (error.message === '404') {
     notify.notFound();
