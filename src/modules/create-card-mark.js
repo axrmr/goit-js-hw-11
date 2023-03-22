@@ -11,27 +11,25 @@ export default function createGalleryCardMarkup(imagesSrcObj) {
 
   return `
   <a class="photo-card-link" href="${largeImageURL}" >
-    <div class="photo-card">
     <img class="photo-card-img" src="${webformatURL}" alt=${tags} loading="lazy" width="400" height="200"/>
     <div class="info">
-      <p class="info-item">
+      <span class="info-item">
         <b>Likes</b>
         <span>${likes}</span>
-      </p>
-      <p class="info-item">
+      </span>
+      <span class="info-item">
         <b>Views</b>
         <span>${views}</span>
-      </p>
-      <p class="info-item">
+      </span class=>
+      <span class="info-item">
         <b>Comments</b>
         <span>${comments}</span>
 
-      </p>
-      <p class="info-item">
+      </span>
+      <span class="info-item">
         <b>Downloads</b>
         <span>${downloads}</span>
-      </p>
+      </span>
       </div>
-    </div>
   </a>`;
 }

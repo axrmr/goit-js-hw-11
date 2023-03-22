@@ -1,10 +1,14 @@
-import clearInnerContent from './modules/clear-inner-content';
-import createImageMarkup from './modules/create-card-mark';
-import getRefs from './modules/get-refs';
-import throttle from './modules/throttle';
+import SimpleLightbox from 'simplelightbox';
+import 'simplelightbox/dist/simple-lightbox.min.css';
 import checkPosition from './modules/check-position';
+import clearInnerContent from './modules/clear-inner-content';
+import createGalleryCardMarkup from './modules/create-card-mark';
+import getRefs from './modules/get-refs';
+import handleExceptions from './modules/handleExceptions';
+import insertImages from './modules/insert-images';
 import notify from './modules/notify';
 import PixabayImages from './modules/pixabay-images';
+import throttle from './modules/throttle';
 
 const ref = getRefs();
 const pixaImages = new PixabayImages({
@@ -23,10 +27,11 @@ const pixaImages = new PixabayImages({
   onResponseOk: function (data) {
     if (this.page === 1) notify.totalFound(data.totalHits);
 
-    insertImages(data.hits);
+    insertImages(ref.galleryContainer, data.hits, createGalleryCardMarkup);
+    let gallery = new SimpleLightbox('.gallery a');
+    gallery.refresh();
   },
 });
-
 window.addEventListener('scroll', throttle(onWindowScroll, 250));
 ref.searchForm.addEventListener('submit', onSearchFormSubmit);
 
@@ -55,20 +60,5 @@ function onSearchFormSubmit(e) {
 }
 
 function fetchImages() {
-  pixaImages.fetch().catch(handleExeptions);
-}
-
-function insertImages(hits) {
-  const cardMarkup = hits.map(createImageMarkup).join('');
-  ref.galleryContainer.insertAdjacentHTML('beforeend', cardMarkup);
-}
-
-function handleExeptions(error) {
-  if (error.message === '404') {
-    notify.notFound();
-  } else if (error.message === 'reached limit') {
-    notify.reachedLimit();
-  } else {
-    notify.error(error.message);
-  }
+  pixaImages.fetch().catch(handleExceptions);
 }
