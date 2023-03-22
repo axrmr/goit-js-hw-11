@@ -11,7 +11,7 @@ export default function createGalleryCardMarkup(imagesSrcObj) {
 
   return `
   <a class="photo-card-link" href="${largeImageURL}" >
-    <img class="photo-card-img" src="${webformatURL}" alt=${tags} loading="lazy" width="400" height="200"/>
+    <img class="photo-card-img smooth-loader" src="${webformatURL}" alt=${tags} loading="lazy" width="400" height="200"/>
     <div class="info">
       <span class="info-item">
         <b>Likes</b>

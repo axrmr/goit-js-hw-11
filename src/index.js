@@ -1,5 +1,6 @@
 import SimpleLightbox from 'simplelightbox';
 import 'simplelightbox/dist/simple-lightbox.min.css';
+import smoothLoader from 'smooth-loader';
 import checkPosition from './modules/check-position';
 import clearInnerContent from './modules/clear-inner-content';
 import createGalleryCardMarkup from './modules/create-card-mark';
@@ -28,8 +29,12 @@ const pixaImages = new PixabayImages({
     if (this.page === 1) notify.totalFound(data.totalHits);
 
     insertImages(ref.galleryContainer, data.hits, createGalleryCardMarkup);
+
     let gallery = new SimpleLightbox('.gallery a');
     gallery.refresh();
+
+    const images = document.querySelectorAll < HTMLImageElement > 'img';
+    smoothLoader(images);
   },
 });
 window.addEventListener('scroll', throttle(onWindowScroll, 250));
