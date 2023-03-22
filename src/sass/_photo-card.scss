@@ -55,6 +55,10 @@
   transition: opacity 0.3s ease-in-out, background-color 0.3s ease-in-out;
   border-radius: 3px 3px 0 0;
 
+  &:hover {
+    background-color: #fff;
+  }
+
   .info-item {
     display: flex;
     flex-direction: column;
