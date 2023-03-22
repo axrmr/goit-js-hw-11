@@ -8,7 +8,7 @@
 
   transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
-  &:nth-child(4n) {
+  &:nth-child(6n) {
     grid-column: span 2;
     grid-row: span 2;
   }
