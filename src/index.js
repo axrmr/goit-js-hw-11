@@ -41,9 +41,7 @@ window.addEventListener('scroll', throttle(onWindowScroll, 250));
 ref.searchForm.addEventListener('submit', onSearchFormSubmit);
 
 function onWindowScroll() {
-  checkPosition(() => {
-    fetchImages();
-  });
+  checkPosition(fetchImages);
 }
 
 function onSearchFormSubmit(e) {
