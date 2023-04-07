@@ -1,0 +1,30 @@
+/*<-----------Vendors---------------*/
+@import "./vendors/normalize";
+
+/*------------Utils-----------------*/
+@import "./utils/vars";
+@import "./utils/mixins";
+
+/*------------Common----------------*/
+@import "./common/reset";
+@import "./common/common";
+
+/*-----------Components-------------*/
+@import "./components/logo";
+@import "./components/mob-menu";
+@import "./components/mob-menu-btn";
+@import "./components/modal";
+@import "./components/modal-form";
+
+/*------------Layouts---------------*/
+@import "./layouts/header";
+@import "./layouts/nav";
+@import "./layouts/index/intro";
+@import "./layouts/index/features";
+@import "./layouts/index/services";
+@import "./layouts/index/team";
+@import "./layouts/index/clients";
+@import "./layouts/portfolio/portfolio-btn";
+@import "./layouts/portfolio/portfolio-gallery";
+@import "./layouts/footer";
+

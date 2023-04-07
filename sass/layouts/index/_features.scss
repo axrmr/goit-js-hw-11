@@ -1,0 +1,74 @@
+.features {
+  padding: 60px 0;
+
+  @include desktop {
+    padding: 94px 0 0;
+  }
+
+  .visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+
+    white-space: nowrap;
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+  }
+
+  &__list {
+    @include tablet {
+      display: flex;
+      flex-wrap: wrap;
+      margin-left: -30px;
+    }
+    @include max-1199 {
+      margin-bottom: -30px;
+    }
+  }
+
+  &__item {
+    @include max-1199 {
+      margin-bottom: 30px;
+    }
+    @include tablet {
+      flex-basis: calc( 100% / 2 - 30px );
+      margin-left: 30px;
+    }
+    @include desktop {
+      flex-basis: calc( 100% / 4 - 30px );
+    }
+  }
+
+  &__group {
+    display: flex;
+    padding: 25px 0;
+    width: 100%;
+    min-width: 270px;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+    border-radius: 4px;
+
+    background-color: #f5f4fa;
+  }
+
+  &__icon {
+    width: 70px;
+    height: 70px;
+  }
+
+  &__name {
+    margin-bottom: 10px;
+    @include font(700, null, 1.14, null);
+    text-align: center;
+    text-transform: uppercase;
+  }
+  &__text {
+    @include font(null, null, 1.71, null);
+    color: $greyText;
+  }
+}

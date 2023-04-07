@@ -1,0 +1,21 @@
+.socials {
+  display: flex;
+
+  &__item + &__item {
+    margin-left: 10px;
+  }
+
+  &__link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+  }
+
+  &__icon {
+    width: 20px;
+    height: 20px;
+  }
+}

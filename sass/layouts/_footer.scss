@@ -1,0 +1,184 @@
+.footer {
+  padding-top: 60px;
+  padding-bottom: 60px;
+  line-height: 1.71;
+
+  background-color: #2f303a;
+
+  &__content {
+    display: flex;
+
+    @include max-1199 {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+    @media screen and (min-width: 768px) and (max-width: 1199px) {
+      flex-direction: row;
+      flex-wrap: wrap;
+      align-items: flex-start;
+      justify-content: center;
+    }
+    @include desktop {
+      align-items: baseline;
+    }
+  }
+
+  &__info {
+    @include max-1199 {
+      margin-bottom: 60px;
+    }
+    @media screen and (min-width: 768px) and (max-width: 1199px) {
+      margin-right: 162px;
+    }
+    @include desktop {
+      margin-right: 70px;
+    }
+  }
+
+  &__logo {
+    margin-bottom: 20px;
+  }
+
+  &__info-address {
+    margin-bottom: 10px;
+    font-style: normal;
+
+    color: $whiteText;
+  }
+
+  &__info-contacts {
+    display: block;
+    font-style: normal;
+    text-decoration: none;
+
+    color: rgba(255, 255, 255, 0.6);
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+    & + & {
+      margin-top: 10px;
+    }
+
+    &:hover,
+    &:focus {
+      color: $blueAccent;
+    }
+  }
+
+  &__socials {
+    @media screen and (max-width: 767px) {
+      margin-bottom: 60px;
+    }
+  }
+
+  &__socials-heading,
+  &__form-heading {
+    text-align: center;
+    @include desktop {
+      text-align: left;
+    }
+    margin-bottom: 20px;
+    @include font(700, null, 1.14, null);
+    text-transform: uppercase;
+
+    color: $whiteText;
+  }
+
+  &__socials-list {
+    display: flex;
+    margin-left: -10px;
+  }
+
+  &__socials-item {
+    width: calc(100% / 4 - 10px);
+    margin-left: 10px;
+  }
+
+  &__socials-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+
+    background-color: rgba(255, 255, 255, 0.1);
+    fill: $whiteText;
+
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+    &:hover,
+    &:focus {
+      background-color: $blueAccent;
+    }
+  }
+
+  &__socials-icon {
+    width: 20px;
+    height: 20px;
+  }
+
+  &__form-wrapper {
+    @include max-1199 {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    @include desktop {
+      margin-left: auto;
+    }
+  }
+
+  &__form {
+    text-align: center;
+    @media screen and (min-width: 480px) and (max-width: 1199px) {
+      min-width: 450px;
+    }
+    @include desktop {
+      min-width: 570px;
+    }
+  }
+
+  &__form-input {
+    width: 100%;
+    height: 50px;
+    margin-bottom: 20px;
+    padding-left: 16px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 4px;
+    @include desktop {
+      width: 358px;
+      margin-bottom: 0;
+    }
+    @include font(null, 16px, 1.25, 0.03em);
+    color: rgba(255, 255, 255, 0.6);
+    background-color: transparent;
+
+    &:focus {
+      border-color: $whiteText;
+      outline: none;
+    }
+  }
+
+  &__form-btn {
+    padding-top: 11px;
+    padding-right: 28px;
+    padding-bottom: 9px;
+    padding-left: 28px;
+
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+    @include desktop {
+      margin-left: 12px;
+    }
+  }
+
+  &__form-icon {
+    vertical-align: middle;
+    width: 24px;
+    height: 24px;
+
+    fill: $whiteText;
+  }
+}

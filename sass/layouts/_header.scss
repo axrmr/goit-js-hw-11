@@ -1,0 +1,73 @@
+.header {
+  position: relative;
+  border-bottom: 1px solid #ececec;
+
+  &__inner {
+    display: flex;
+    align-items: center;
+    height: 60px;
+    @include tablet {
+      height: 80px;
+    }
+  }
+
+  &__contacts {
+    display: none;
+    @include tablet {
+      display: block;
+    }
+    @include desktop {
+      display: flex;
+    }
+  }
+
+  &__contacts-item {
+    @include max-1199 {
+      padding: 5px 0;
+    }
+    @include desktop {
+      margin-left: 30px;
+    }
+  }
+
+  &__contacts-link {
+    @include tablet {
+      @include font(500, 12px, 1.16, 0.02em);
+      display: flex;
+      align-items: center;
+      transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+      text-decoration: none;
+      color: $greyText;
+
+      &:hover,
+      &:focus {
+        color: $blueAccent;
+      }
+    }
+    @include desktop {
+      @include font(null, 14px, 1.14, null);
+      padding-top: 32px;
+      padding-bottom: 32px;
+    }
+  }
+
+  &__contacts-envelope {
+    @include tablet {
+      width: 16px;
+      height: 12px;
+      margin-right: 8px;
+
+      fill: currentColor;
+    }
+  }
+
+  &__contacts-smartphone {
+    @include tablet {
+      width: 10px;
+      height: 16px;
+      margin-right: 8px;
+
+      fill: currentColor;
+    }
+  }
+}
